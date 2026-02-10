@@ -30,7 +30,6 @@ const Header: React.FC = () => {
           {user.role === 'TRAINER' ? (
             <>
               <Link to="/dashboard">Dashboard</Link>
-              <Link to="/profile">My Profile</Link>
               <Link to="/clients">My Clients</Link>
               <Link to="/courses">My Courses</Link>
             </>
@@ -39,7 +38,6 @@ const Header: React.FC = () => {
               <Link to="/dashboard">Dashboard</Link>
               <Link to="/trainers">Find Trainers</Link>
               <Link to="/goals">My Goals</Link>
-              <Link to="/profile">Profile</Link>
             </>
           )}
         </nav>
@@ -53,9 +51,6 @@ const Header: React.FC = () => {
           </button>
           {showMenu && (
             <div className="header-dropdown">
-              <Link to="/profile" onClick={() => setShowMenu(false)}>
-                View Profile
-              </Link>
               <button onClick={handleLogout}>Logout</button>
             </div>
           )}

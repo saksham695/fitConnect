@@ -78,9 +78,6 @@ const TrainerDashboard: React.FC = () => {
           <Link to="/courses/create" className="action-button primary">
             Create New Course
           </Link>
-          <Link to="/profile" className="action-button secondary">
-            Edit Profile
-          </Link>
         </div>
       </div>
     </Layout>

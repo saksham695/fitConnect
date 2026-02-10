@@ -9,7 +9,6 @@ import Landing from './pages/Landing/Landing';
 import Login from './pages/Login/Login';
 import Signup from './pages/Signup/Signup';
 import Dashboard from './pages/Dashboard/Dashboard';
-import Profile from './pages/Profile/Profile';
 import TrainerList from './pages/Trainers/TrainerList';
 import TrainerDetail from './pages/Trainers/TrainerDetail';
 import CourseList from './pages/Courses/CourseList';
@@ -41,14 +40,6 @@ const AppRoutes: React.FC = () => {
         element={
           <ProtectedRoute>
             <Dashboard />
-          </ProtectedRoute>
-        }
-      />
-      <Route
-        path="/profile"
-        element={
-          <ProtectedRoute>
-            <Profile />
           </ProtectedRoute>
         }
       />
