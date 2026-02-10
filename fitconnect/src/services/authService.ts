@@ -61,6 +61,7 @@ class AuthService {
         },
         trainers: [],
         goals: [],
+        enrolledCourses: [],
       };
       storageService.createUser(client);
       return client;

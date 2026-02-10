@@ -20,6 +20,7 @@ export interface Client extends User {
   profile: ClientProfile;
   trainers: string[]; // Array of trainer IDs
   goals: string[];
+  enrolledCourses: string[]; // Array of course IDs
 }
 
 export interface TrainerProfile {
@@ -54,6 +55,7 @@ export interface Course {
   targetGoals: string[];
   duration: string; // e.g., "4 weeks"
   createdAt: string;
+  enrolledClients: string[]; // Array of client IDs enrolled in this course
 }
 
 export interface Connection {

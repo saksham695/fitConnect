@@ -14,6 +14,7 @@ import TrainerDetail from './pages/Trainers/TrainerDetail';
 import CourseList from './pages/Courses/CourseList';
 import CreateCourse from './pages/Courses/CreateCourse';
 import CourseDetail from './pages/Courses/CourseDetail';
+import MyCourses from './pages/Courses/MyCourses';
 import ClientList from './pages/Clients/ClientList';
 import ClientDetail from './pages/Clients/ClientDetail';
 import Goals from './pages/Goals/Goals';
@@ -103,6 +104,14 @@ const AppRoutes: React.FC = () => {
         element={
           <ProtectedRoute allowedRoles={[UserRole.CLIENT]}>
             <Goals />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/my-courses"
+        element={
+          <ProtectedRoute allowedRoles={[UserRole.CLIENT]}>
+            <MyCourses />
           </ProtectedRoute>
         }
       />

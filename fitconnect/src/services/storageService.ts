@@ -227,6 +227,7 @@ class StorageService {
         },
         trainers: [],
         goals: ['Lose weight', 'Build strength'],
+        enrolledCourses: [],
       },
       {
         id: 'client-2',
@@ -241,6 +242,7 @@ class StorageService {
         },
         trainers: [],
         goals: ['Improve flexibility', 'Reduce stress'],
+        enrolledCourses: [],
       },
       {
         id: 'client-3',
@@ -255,6 +257,7 @@ class StorageService {
         },
         trainers: [],
         goals: ['Marathon training', 'Endurance improvement'],
+        enrolledCourses: [],
       },
       {
         id: 'client-4',
@@ -269,6 +272,7 @@ class StorageService {
         },
         trainers: [],
         goals: ['Learn boxing basics', 'Cardio fitness'],
+        enrolledCourses: [],
       },
       {
         id: 'client-5',
@@ -283,6 +287,7 @@ class StorageService {
         },
         trainers: [],
         goals: ['Core strength', 'Posture improvement'],
+        enrolledCourses: [],
       },
       {
         id: 'client-6',
@@ -297,6 +302,7 @@ class StorageService {
         },
         trainers: [],
         goals: ['Weight loss', 'Better nutrition'],
+        enrolledCourses: [],
       },
       {
         id: 'client-7',
@@ -311,6 +317,7 @@ class StorageService {
         },
         trainers: [],
         goals: ['Competition prep', 'Strength gains'],
+        enrolledCourses: [],
       },
       {
         id: 'client-8',
@@ -325,6 +332,7 @@ class StorageService {
         },
         trainers: [],
         goals: ['Swimming technique', 'Triathlon training'],
+        enrolledCourses: [],
       },
       {
         id: 'client-9',
@@ -339,6 +347,7 @@ class StorageService {
         },
         trainers: [],
         goals: ['Fun workouts', 'Stay active'],
+        enrolledCourses: [],
       },
       {
         id: 'client-10',
@@ -353,6 +362,7 @@ class StorageService {
         },
         trainers: [],
         goals: ['Mobility improvement', 'Balance training'],
+        enrolledCourses: [],
       },
     ];
 
@@ -367,6 +377,7 @@ class StorageService {
         targetGoals: ['Build strength', 'Weight loss', 'Muscle gain'],
         duration: '12 weeks',
         createdAt: new Date(Date.now() - 30 * 24 * 60 * 60 * 1000).toISOString(), // 30 days ago
+        enrolledClients: [],
       },
       {
         id: 'course-2',
@@ -377,6 +388,7 @@ class StorageService {
         targetGoals: ['Muscle gain', 'Bodybuilding', 'Strength'],
         duration: '16 weeks',
         createdAt: new Date(Date.now() - 15 * 24 * 60 * 60 * 1000).toISOString(), // 15 days ago
+        enrolledClients: [],
       },
       {
         id: 'course-3',
@@ -387,6 +399,7 @@ class StorageService {
         targetGoals: ['Weight loss', 'Fat loss', 'Body transformation'],
         duration: '8 weeks',
         createdAt: new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString(), // 7 days ago
+        enrolledClients: [],
       },
       {
         id: 'course-4',
@@ -397,6 +410,7 @@ class StorageService {
         targetGoals: ['Learn basics', 'Build strength', 'Gym confidence'],
         duration: '6 weeks',
         createdAt: new Date(Date.now() - 3 * 24 * 60 * 60 * 1000).toISOString(), // 3 days ago
+        enrolledClients: [],
       },
       {
         id: 'course-5',
@@ -407,6 +421,7 @@ class StorageService {
         targetGoals: ['Powerlifting', 'Strength', 'Competition prep'],
         duration: '20 weeks',
         createdAt: new Date(Date.now() - 1 * 24 * 60 * 60 * 1000).toISOString(), // 1 day ago
+        enrolledClients: [],
       },
     ];
     
@@ -415,6 +430,33 @@ class StorageService {
     if (trainer1) {
       trainer1.courses = mockCourses.map(c => c.id);
     }
+    
+    // Enroll clients in courses
+    const enrollClient = (clientId: string, courseId: string) => {
+      const client = mockClients.find(c => c.id === clientId);
+      const course = mockCourses.find(co => co.id === courseId);
+      
+      if (client && !client.enrolledCourses.includes(courseId)) {
+        client.enrolledCourses.push(courseId);
+      }
+      
+      if (course && !course.enrolledClients.includes(clientId)) {
+        course.enrolledClients.push(clientId);
+      }
+    };
+    
+    // Client 1 (Alice) enrolled in 3 courses from Trainer 1
+    enrollClient('client-1', 'course-1'); // 12-Week Strength Building
+    enrollClient('client-1', 'course-3'); // Fat Loss Transformation
+    enrollClient('client-1', 'course-4'); // Beginner Weight Training
+    
+    // Client 6 (Frank) enrolled in 2 courses from Trainer 1
+    enrollClient('client-6', 'course-1'); // 12-Week Strength Building
+    enrollClient('client-6', 'course-3'); // Fat Loss Transformation
+    
+    // Client 7 (Grace) enrolled in advanced courses
+    enrollClient('client-7', 'course-2'); // Advanced Bodybuilding
+    enrollClient('client-7', 'course-5'); // Powerlifting Prep
     
     // Create mock connections between clients and trainers
     const connections: Connection[] = [];
