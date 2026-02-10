@@ -1,0 +1,127 @@
+.signup-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: #f9fafb;
+}
+
+.signup-container {
+  background: white;
+  padding: 3rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+.signup-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.signup-subtitle {
+  text-align: center;
+  color: #6b7280;
+  margin-bottom: 2rem;
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-weight: 500;
+  color: #374151;
+}
+
+.form-group input {
+  padding: 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #2563eb;
+}
+
+.role-selector {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.role-button {
+  flex: 1;
+  padding: 0.75rem;
+  border: 2px solid #d1d5db;
+  border-radius: 0.5rem;
+  background: white;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.role-button:hover {
+  border-color: #2563eb;
+}
+
+.role-button.active {
+  background: #2563eb;
+  color: white;
+  border-color: #2563eb;
+}
+
+.signup-error {
+  background: #fee2e2;
+  color: #dc2626;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  text-align: center;
+}
+
+.signup-button {
+  background: #2563eb;
+  color: white;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.signup-button:hover:not(:disabled) {
+  background: #1d4ed8;
+}
+
+.signup-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.signup-login {
+  text-align: center;
+  margin-top: 1.5rem;
+  color: #6b7280;
+}
+
+.signup-login a {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 500;
+}
