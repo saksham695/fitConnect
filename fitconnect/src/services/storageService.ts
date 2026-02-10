@@ -1,5 +1,5 @@
 import { User, Trainer, Client, Course, Connection } from '../types/interfaces';
-import { UserRole, ConnectionStatus, FitnessLevel } from '../types/enums';
+import { UserRole, ConnectionStatus, FitnessLevel, CourseDifficulty } from '../types/enums';
 
 /**
  * Storage Service - Manages localStorage operations
@@ -356,9 +356,65 @@ class StorageService {
       },
     ];
 
-    const allUsers = [...mockTrainers, ...mockClients];
-    localStorage.setItem(this.storageKeys.users, JSON.stringify(allUsers));
-    localStorage.setItem(this.storageKeys.courses, JSON.stringify([]));
+    // Create mock courses for Trainer 1
+    const mockCourses: Course[] = [
+      {
+        id: 'course-1',
+        trainerId: 'trainer-1',
+        title: '12-Week Strength Building Program',
+        description: 'A comprehensive strength training program designed for beginners to intermediate lifters. Learn proper form, progressive overload, and build a solid foundation of strength.',
+        difficulty: CourseDifficulty.BEGINNER,
+        targetGoals: ['Build strength', 'Weight loss', 'Muscle gain'],
+        duration: '12 weeks',
+        createdAt: new Date(Date.now() - 30 * 24 * 60 * 60 * 1000).toISOString(), // 30 days ago
+      },
+      {
+        id: 'course-2',
+        trainerId: 'trainer-1',
+        title: 'Advanced Bodybuilding Split',
+        description: 'An advanced training program for experienced lifters looking to maximize muscle growth. Includes detailed nutrition guidance and recovery protocols.',
+        difficulty: CourseDifficulty.ADVANCED,
+        targetGoals: ['Muscle gain', 'Bodybuilding', 'Strength'],
+        duration: '16 weeks',
+        createdAt: new Date(Date.now() - 15 * 24 * 60 * 60 * 1000).toISOString(), // 15 days ago
+      },
+      {
+        id: 'course-3',
+        trainerId: 'trainer-1',
+        title: 'Fat Loss Transformation Challenge',
+        description: 'A 8-week intensive program focused on fat loss through strength training and nutrition. Includes meal plans, workout schedules, and progress tracking.',
+        difficulty: CourseDifficulty.INTERMEDIATE,
+        targetGoals: ['Weight loss', 'Fat loss', 'Body transformation'],
+        duration: '8 weeks',
+        createdAt: new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString(), // 7 days ago
+      },
+      {
+        id: 'course-4',
+        trainerId: 'trainer-1',
+        title: 'Beginner Weight Training Fundamentals',
+        description: 'Perfect for those new to weight training. Learn the basics of proper form, safety, and fundamental exercises. Build confidence in the gym.',
+        difficulty: CourseDifficulty.BEGINNER,
+        targetGoals: ['Learn basics', 'Build strength', 'Gym confidence'],
+        duration: '6 weeks',
+        createdAt: new Date(Date.now() - 3 * 24 * 60 * 60 * 1000).toISOString(), // 3 days ago
+      },
+      {
+        id: 'course-5',
+        trainerId: 'trainer-1',
+        title: 'Powerlifting Prep Program',
+        description: 'A specialized program for competitive powerlifting. Focus on squat, bench press, and deadlift with periodization and peaking strategies.',
+        difficulty: CourseDifficulty.ADVANCED,
+        targetGoals: ['Powerlifting', 'Strength', 'Competition prep'],
+        duration: '20 weeks',
+        createdAt: new Date(Date.now() - 1 * 24 * 60 * 60 * 1000).toISOString(), // 1 day ago
+      },
+    ];
+    
+    // Update trainer-1's courses array
+    const trainer1 = mockTrainers.find(t => t.id === 'trainer-1');
+    if (trainer1) {
+      trainer1.courses = mockCourses.map(c => c.id);
+    }
     
     // Create mock connections between clients and trainers
     const connections: Connection[] = [];
@@ -387,9 +443,12 @@ class StorageService {
       }
     };
     
-    // Client 1 connected to Trainer 1 and Trainer 3
+    // Client 1 connected to multiple trainers (Trainer 1, 2, 3, 4, 5)
     createConnection('trainer-1', 'client-1');
+    createConnection('trainer-2', 'client-1');
     createConnection('trainer-3', 'client-1');
+    createConnection('trainer-4', 'client-1');
+    createConnection('trainer-5', 'client-1');
     
     // Client 2 connected to Trainer 2
     createConnection('trainer-2', 'client-2');
@@ -420,9 +479,10 @@ class StorageService {
     // Client 10 connected to Trainer 10
     createConnection('trainer-10', 'client-10');
     
-    // Save updated users with connections
-    const updatedUsers = [...mockTrainers, ...mockClients];
-    localStorage.setItem(this.storageKeys.users, JSON.stringify(updatedUsers));
+    // Save all data: users (with courses and connections), courses, and connections
+    const finalUsers = [...mockTrainers, ...mockClients];
+    localStorage.setItem(this.storageKeys.users, JSON.stringify(finalUsers));
+    localStorage.setItem(this.storageKeys.courses, JSON.stringify(mockCourses));
     localStorage.setItem(this.storageKeys.connections, JSON.stringify(connections));
   }
 

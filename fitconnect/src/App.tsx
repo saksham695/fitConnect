@@ -17,12 +17,11 @@ import CourseDetail from './pages/Courses/CourseDetail';
 import ClientList from './pages/Clients/ClientList';
 import ClientDetail from './pages/Clients/ClientDetail';
 import Goals from './pages/Goals/Goals';
-import Layout from './components/Layout/Layout';
 
 import './App.css';
 
 const AppRoutes: React.FC = () => {
-  const { isAuthenticated, user } = useAuth();
+  const { isAuthenticated } = useAuth();
 
   return (
     <Routes>

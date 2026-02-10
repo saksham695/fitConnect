@@ -14,9 +14,6 @@ const ClientDetail: React.FC = () => {
   }
 
   const client = storageService.getClientById(id);
-  const trainer = client
-    ? storageService.getTrainerById(client.trainers[0])
-    : null;
 
   if (!client) {
     return (
