@@ -32,6 +32,7 @@ const CreateCourse: React.FC = () => {
       targetGoals,
       duration,
       createdAt: new Date().toISOString(),
+      enrolledClients: [],
     };
 
     storageService.createCourse(course);
