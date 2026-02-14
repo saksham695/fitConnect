@@ -1,0 +1,314 @@
+/**
+ * FitConnect Design System - CSS Variables
+ * 
+ * This file contains all design tokens for the application.
+ * Use these variables instead of hardcoded values for consistency.
+ */
+
+:root {
+  /* ===== COLORS ===== */
+  
+  /* Primary Colors (Blue) */
+  --color-primary-50: #eff6ff;
+  --color-primary-100: #dbeafe;
+  --color-primary-200: #bfdbfe;
+  --color-primary-300: #93c5fd;
+  --color-primary-400: #60a5fa;
+  --color-primary-500: #3b82f6;
+  --color-primary-600: #2563eb;
+  --color-primary-700: #1d4ed8;
+  --color-primary-800: #1e40af;
+  --color-primary-900: #1e3a8a;
+
+  /* Success Colors (Green) */
+  --color-success-50: #f0fdf4;
+  --color-success-100: #dcfce7;
+  --color-success-200: #bbf7d0;
+  --color-success-300: #86efac;
+  --color-success-400: #4ade80;
+  --color-success-500: #22c55e;
+  --color-success-600: #16a34a;
+  --color-success-700: #15803d;
+  --color-success-800: #166534;
+  --color-success-900: #14532d;
+
+  /* Warning Colors (Yellow) */
+  --color-warning-50: #fffbeb;
+  --color-warning-100: #fef3c7;
+  --color-warning-200: #fde68a;
+  --color-warning-300: #fcd34d;
+  --color-warning-400: #fbbf24;
+  --color-warning-500: #f59e0b;
+  --color-warning-600: #d97706;
+  --color-warning-700: #b45309;
+  --color-warning-800: #92400e;
+  --color-warning-900: #78350f;
+
+  /* Error Colors (Red) */
+  --color-error-50: #fef2f2;
+  --color-error-100: #fee2e2;
+  --color-error-200: #fecaca;
+  --color-error-300: #fca5a5;
+  --color-error-400: #f87171;
+  --color-error-500: #ef4444;
+  --color-error-600: #dc2626;
+  --color-error-700: #b91c1c;
+  --color-error-800: #991b1b;
+  --color-error-900: #7f1d1d;
+
+  /* Neutral Colors (Gray) */
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d1d5db;
+  --color-gray-400: #9ca3af;
+  --color-gray-500: #6b7280;
+  --color-gray-600: #4b5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1f2937;
+  --color-gray-900: #111827;
+
+  /* Special */
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  /* ===== SEMANTIC COLORS ===== */
+  
+  /* Backgrounds */
+  --bg-primary: var(--color-gray-50);
+  --bg-secondary: var(--color-white);
+  --bg-tertiary: var(--color-gray-100);
+  --bg-overlay: rgba(0, 0, 0, 0.5);
+
+  /* Text */
+  --text-primary: var(--color-gray-900);
+  --text-secondary: var(--color-gray-600);
+  --text-tertiary: var(--color-gray-500);
+  --text-disabled: var(--color-gray-400);
+  --text-inverse: var(--color-white);
+
+  /* Borders */
+  --border-primary: var(--color-gray-200);
+  --border-secondary: var(--color-gray-300);
+  --border-focus: var(--color-primary-600);
+
+  /* Status */
+  --status-success: var(--color-success-600);
+  --status-warning: var(--color-warning-500);
+  --status-error: var(--color-error-600);
+  --status-info: var(--color-primary-600);
+
+  /* ===== SPACING ===== */
+  
+  --spacing-0: 0;
+  --spacing-1: 0.25rem;   /* 4px */
+  --spacing-2: 0.5rem;    /* 8px */
+  --spacing-3: 0.75rem;   /* 12px */
+  --spacing-4: 1rem;      /* 16px */
+  --spacing-5: 1.25rem;   /* 20px */
+  --spacing-6: 1.5rem;    /* 24px */
+  --spacing-8: 2rem;      /* 32px */
+  --spacing-10: 2.5rem;   /* 40px */
+  --spacing-12: 3rem;     /* 48px */
+  --spacing-16: 4rem;     /* 64px */
+  --spacing-20: 5rem;     /* 80px */
+  --spacing-24: 6rem;     /* 96px */
+
+  /* Semantic Spacing */
+  --padding-xs: var(--spacing-2);
+  --padding-sm: var(--spacing-3);
+  --padding-md: var(--spacing-4);
+  --padding-lg: var(--spacing-6);
+  --padding-xl: var(--spacing-8);
+  --padding-2xl: var(--spacing-12);
+
+  --gap-xs: var(--spacing-2);
+  --gap-sm: var(--spacing-3);
+  --gap-md: var(--spacing-4);
+  --gap-lg: var(--spacing-6);
+  --gap-xl: var(--spacing-8);
+
+  /* ===== TYPOGRAPHY ===== */
+  
+  /* Font Families */
+  --font-family-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 
+                      'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 
+                      'Helvetica Neue', sans-serif;
+  --font-family-mono: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+
+  /* Font Sizes */
+  --font-size-xs: 0.75rem;    /* 12px */
+  --font-size-sm: 0.875rem;   /* 14px */
+  --font-size-base: 1rem;     /* 16px */
+  --font-size-lg: 1.125rem;   /* 18px */
+  --font-size-xl: 1.25rem;    /* 20px */
+  --font-size-2xl: 1.5rem;    /* 24px */
+  --font-size-3xl: 1.875rem;  /* 30px */
+  --font-size-4xl: 2.25rem;   /* 36px */
+  --font-size-5xl: 3rem;      /* 48px */
+
+  /* Font Weights */
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+
+  /* Line Heights */
+  --line-height-tight: 1.25;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+
+  /* ===== BORDERS ===== */
+  
+  /* Border Radius */
+  --radius-none: 0;
+  --radius-sm: 0.125rem;   /* 2px */
+  --radius-base: 0.25rem;  /* 4px */
+  --radius-md: 0.375rem;   /* 6px */
+  --radius-lg: 0.5rem;     /* 8px */
+  --radius-xl: 0.75rem;    /* 12px */
+  --radius-2xl: 1rem;      /* 16px */
+  --radius-full: 9999px;
+
+  /* Border Widths */
+  --border-width-thin: 1px;
+  --border-width-medium: 2px;
+  --border-width-thick: 4px;
+
+  /* ===== SHADOWS ===== */
+  
+  --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  --shadow-focus: 0 0 0 3px rgba(37, 99, 235, 0.3);
+
+  /* ===== TRANSITIONS ===== */
+  
+  --transition-fast: 150ms;
+  --transition-base: 200ms;
+  --transition-slow: 300ms;
+  
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+
+  --transition-colors: color var(--transition-base) var(--ease-in-out),
+                       background-color var(--transition-base) var(--ease-in-out),
+                       border-color var(--transition-base) var(--ease-in-out);
+  --transition-all: all var(--transition-base) var(--ease-in-out);
+
+  /* ===== Z-INDEX ===== */
+  
+  --z-index-dropdown: 1000;
+  --z-index-sticky: 1020;
+  --z-index-fixed: 1030;
+  --z-index-modal-backdrop: 1040;
+  --z-index-modal: 1050;
+  --z-index-popover: 1060;
+  --z-index-tooltip: 1070;
+  --z-index-notification: 1080;
+
+  /* ===== COMPONENT-SPECIFIC TOKENS ===== */
+  
+  /* Buttons */
+  --btn-primary-bg: var(--color-primary-600);
+  --btn-primary-bg-hover: var(--color-primary-700);
+  --btn-primary-text: var(--color-white);
+  --btn-primary-padding: var(--spacing-3) var(--spacing-6);
+  --btn-primary-radius: var(--radius-lg);
+  --btn-primary-shadow: var(--shadow-sm);
+  
+  --btn-secondary-bg: var(--color-gray-100);
+  --btn-secondary-bg-hover: var(--color-gray-200);
+  --btn-secondary-text: var(--color-gray-700);
+  
+  --btn-danger-bg: var(--color-error-600);
+  --btn-danger-bg-hover: var(--color-error-700);
+  --btn-danger-text: var(--color-white);
+  
+  --btn-success-bg: var(--color-success-600);
+  --btn-success-bg-hover: var(--color-success-700);
+  --btn-success-text: var(--color-white);
+
+  /* Forms */
+  --input-bg: var(--color-white);
+  --input-border: var(--color-gray-300);
+  --input-border-focus: var(--color-primary-600);
+  --input-text: var(--color-gray-900);
+  --input-placeholder: var(--color-gray-400);
+  --input-padding: var(--spacing-3);
+  --input-radius: var(--radius-lg);
+  --input-shadow-focus: var(--shadow-focus);
+  
+  --input-height-sm: 2rem;
+  --input-height-md: 2.5rem;
+  --input-height-lg: 3rem;
+
+  /* Cards */
+  --card-bg: var(--color-white);
+  --card-border: var(--color-gray-200);
+  --card-padding: var(--spacing-6);
+  --card-radius: var(--radius-lg);
+  --card-shadow: var(--shadow-sm);
+  --card-shadow-hover: var(--shadow-md);
+
+  /* Badges */
+  --badge-padding: var(--spacing-2) var(--spacing-3);
+  --badge-radius: var(--radius-full);
+  --badge-font-size: var(--font-size-xs);
+  --badge-font-weight: var(--font-weight-medium);
+  
+  --badge-primary-bg: var(--color-primary-100);
+  --badge-primary-text: var(--color-primary-700);
+  
+  --badge-success-bg: var(--color-success-100);
+  --badge-success-text: var(--color-success-700);
+  
+  --badge-warning-bg: var(--color-warning-100);
+  --badge-warning-text: var(--color-warning-700);
+  
+  --badge-error-bg: var(--color-error-100);
+  --badge-error-text: var(--color-error-700);
+
+  /* Status Colors */
+  --status-confirmed-bg: var(--color-primary-100);
+  --status-confirmed-text: var(--color-primary-700);
+  --status-confirmed-border: var(--color-primary-600);
+  
+  --status-completed-bg: var(--color-success-100);
+  --status-completed-text: var(--color-success-700);
+  --status-completed-border: var(--color-success-600);
+  
+  --status-cancelled-bg: var(--color-error-100);
+  --status-cancelled-text: var(--color-error-700);
+  --status-cancelled-border: var(--color-error-600);
+  
+  --status-pending-bg: var(--color-warning-100);
+  --status-pending-text: var(--color-warning-700);
+  --status-pending-border: var(--color-warning-600);
+
+  /* Fitness Levels */
+  --level-beginner-bg: var(--color-success-100);
+  --level-beginner-text: var(--color-success-700);
+  
+  --level-intermediate-bg: var(--color-warning-100);
+  --level-intermediate-text: var(--color-warning-700);
+  
+  --level-advanced-bg: var(--color-error-100);
+  --level-advanced-text: var(--color-error-700);
+}
+
+/* ===== BREAKPOINTS ===== */
+/* Use these in @media queries */
+
+/* 
+  @media (min-width: 640px)  - Small tablets
+  @media (min-width: 768px)  - Tablets
+  @media (min-width: 1024px) - Desktop
+  @media (min-width: 1280px) - Large desktop
+*/
