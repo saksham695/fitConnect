@@ -223,7 +223,7 @@ const TrainerProfile: React.FC = () => {
             )}
 
             {/* Certifications */}
-            {trainer.profile.certifications.length > 0 && (
+            {trainer.profile.certifications && trainer.profile.certifications.length > 0 && (
               <div className="profile-section">
                 <h2>Certifications</h2>
                 <div className="certifications-list">
@@ -239,7 +239,7 @@ const TrainerProfile: React.FC = () => {
             )}
 
             {/* Achievements */}
-            {trainer.profile.achievements.length > 0 && (
+            {trainer.profile.achievements && trainer.profile.achievements.length > 0 && (
               <div className="profile-section">
                 <h2>Achievements</h2>
                 <div className="achievements-list">
