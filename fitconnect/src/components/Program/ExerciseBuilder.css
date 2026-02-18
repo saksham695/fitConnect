@@ -75,48 +75,6 @@
   line-height: var(--line-height-normal);
 }
 
-/* Exercise Name Autocomplete */
-.exercise-name-input-wrapper {
-  position: relative;
-}
-
-.exercise-suggestions {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  background: var(--color-white);
-  border: 1px solid var(--border-secondary);
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-lg);
-  max-height: 300px;
-  overflow-y: auto;
-  z-index: var(--z-index-dropdown);
-  margin-top: var(--spacing-1);
-}
-
-.exercise-suggestion-item {
-  width: 100%;
-  padding: var(--spacing-3) var(--spacing-4);
-  background: var(--color-white);
-  border: none;
-  border-bottom: 1px solid var(--border-primary);
-  text-align: left;
-  font-size: var(--font-size-base);
-  color: var(--text-primary);
-  cursor: pointer;
-  transition: var(--transition-colors);
-}
-
-.exercise-suggestion-item:last-child {
-  border-bottom: none;
-}
-
-.exercise-suggestion-item:hover {
-  background: var(--color-gray-50);
-  color: var(--color-primary-600);
-}
-
 .exercise-builder-actions {
   display: flex;
   justify-content: flex-end;

@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Exercise } from '../../types/interfaces';
-import { exerciseLibraryService } from '../../services/exerciseLibraryService';
 import './ExerciseBuilder.css';
 
 interface ExerciseBuilderProps {
@@ -24,26 +23,6 @@ const ExerciseBuilder: React.FC<ExerciseBuilderProps> = ({
   const [tempo, setTempo] = useState(exercise?.tempo || '');
   const [description, setDescription] = useState(exercise?.description || '');
   const [notes, setNotes] = useState(exercise?.notes || '');
-  const [showExerciseList, setShowExerciseList] = useState(false);
-
-  const exerciseNames = exerciseLibraryService.getExerciseNames();
-  const filteredExercises = exerciseNames.filter(ex =>
-    ex.toLowerCase().includes(name.toLowerCase())
-  );
-
-  const handleSelectExercise = (exerciseName: string) => {
-    setName(exerciseName);
-    setShowExerciseList(false);
-
-    // Load exercise details from library
-    const libraryExercises = exerciseLibraryService.searchExercises(exerciseName);
-    if (libraryExercises.length > 0) {
-      const ex = libraryExercises[0];
-      if (ex.instructions.length > 0) {
-        setDescription(ex.instructions.join('. '));
-      }
-    }
-  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -88,34 +67,14 @@ const ExerciseBuilder: React.FC<ExerciseBuilderProps> = ({
         {/* Exercise Name */}
         <div className="form-group">
           <label className="form-label">Exercise Name *</label>
-          <div className="exercise-name-input-wrapper">
-            <input
-              type="text"
-              className="input"
-              value={name}
-              onChange={(e) => {
-                setName(e.target.value);
-                setShowExerciseList(true);
-              }}
-              onFocus={() => setShowExerciseList(true)}
-              placeholder="Search for exercise..."
-              required
-            />
-            {showExerciseList && filteredExercises.length > 0 && name && (
-              <div className="exercise-suggestions">
-                {filteredExercises.slice(0, 10).map((ex) => (
-                  <button
-                    key={ex}
-                    type="button"
-                    className="exercise-suggestion-item"
-                    onClick={() => handleSelectExercise(ex)}
-                  >
-                    {ex}
-                  </button>
-                ))}
-              </div>
-            )}
-          </div>
+          <input
+            type="text"
+            className="input"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            placeholder="e.g., Barbell Squat, Push-ups, etc."
+            required
+          />
         </div>
 
         {/* Sets and Reps */}
