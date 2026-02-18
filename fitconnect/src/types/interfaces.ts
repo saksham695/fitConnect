@@ -122,3 +122,119 @@ export interface Booking {
   createdAt: string;
   updatedAt: string;
 }
+
+// ==================== PROGRAM SYSTEM INTERFACES ====================
+
+export interface Program {
+  id: string;
+  trainerId: string;
+  clientId: string;
+  title: string;
+  description: string;
+  startDate: string; // ISO date
+  durationWeeks: number;
+  status: import('./enums').ProgramStatus;
+  weeks: Week[];
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface Week {
+  weekNumber: number;
+  startDate: string;
+  endDate: string;
+  days: DayWorkout[];
+  notes?: string;
+  copiedFromWeek?: number;
+}
+
+export interface DayWorkout {
+  dayOfWeek: DayOfWeek;
+  date: string;
+  exercises: Exercise[];
+  dayType: import('./enums').DayType;
+  notes?: string;
+  status: import('./enums').WorkoutStatus;
+  clientLog?: ClientWorkoutLog;
+  trainerReview?: TrainerReview;
+}
+
+export interface Exercise {
+  id: string;
+  name: string;
+  muscleGroups?: string[];
+  sets: number;
+  reps: string; // "8-12" or "10" or "AMRAP"
+  restSeconds?: number;
+  tempo?: string; // "3-1-1"
+  weight?: string; // "60kg" or "bodyweight"
+  description?: string;
+  videoUrl?: string;
+  notes?: string;
+  orderIndex: number;
+}
+
+export interface ClientWorkoutLog {
+  loggedAt: string;
+  exerciseLogs: ExerciseLog[];
+  overallNotes?: string;
+  duration?: number; // Minutes
+  rating?: number; // 1-5
+}
+
+export interface ExerciseLog {
+  exerciseId: string;
+  completed: boolean;
+  actualSets: SetLog[];
+  notes?: string;
+}
+
+export interface SetLog {
+  setNumber: number;
+  actualReps: number;
+  actualWeight?: string;
+  rpe?: number; // Rate of Perceived Exertion (1-10)
+  completed: boolean;
+}
+
+export interface TrainerReview {
+  reviewedAt: string;
+  rating: number; // 1-5
+  feedback: string;
+  encouragement?: string;
+  adjustmentsNeeded?: string;
+  nextSteps?: string;
+}
+
+export interface ExerciseLibraryItem {
+  id: string;
+  name: string;
+  category: import('./enums').ExerciseCategory;
+  muscleGroups: string[];
+  equipment: string[];
+  difficulty: import('./enums').ExerciseDifficulty;
+  instructions: string[];
+  videoUrl?: string;
+  imageUrl?: string;
+}
+
+export interface ProgressSnapshot {
+  id: string;
+  clientId: string;
+  date: string;
+  weight?: number;
+  measurements?: {
+    chest?: number;
+    waist?: number;
+    hips?: number;
+    biceps?: number;
+    thighs?: number;
+  };
+  photos?: {
+    front?: string;
+    side?: string;
+    back?: string;
+  };
+  notes?: string;
+  programId?: string;
+}

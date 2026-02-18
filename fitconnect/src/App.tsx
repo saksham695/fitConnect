@@ -24,6 +24,10 @@ import AvailabilityManagement from './pages/Availability/AvailabilityManagement'
 import BookSession from './pages/Booking/BookSession';
 import TrainerBookings from './pages/Booking/TrainerBookings';
 import ClientBookings from './pages/Booking/ClientBookings';
+import ProgramList from './pages/Programs/ProgramList';
+import ProgramCalendar from './pages/Programs/ProgramCalendar';
+import CreateProgram from './pages/Programs/CreateProgram';
+import ProgressTracking from './pages/Progress/ProgressTracking';
 
 import './App.css';
 
@@ -162,6 +166,42 @@ const AppRoutes: React.FC = () => {
         element={
           <ProtectedRoute allowedRoles={[UserRole.CLIENT]}>
             <MyCourses />
+          </ProtectedRoute>
+        }
+      />
+
+      {/* Program Routes */}
+      <Route
+        path="/programs"
+        element={
+          <ProtectedRoute>
+            <ProgramList />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/programs/create"
+        element={
+          <ProtectedRoute allowedRoles={[UserRole.TRAINER]}>
+            <CreateProgram />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/programs/:programId"
+        element={
+          <ProtectedRoute>
+            <ProgramCalendar />
+          </ProtectedRoute>
+        }
+      />
+
+      {/* Progress Routes */}
+      <Route
+        path="/progress"
+        element={
+          <ProtectedRoute allowedRoles={[UserRole.CLIENT]}>
+            <ProgressTracking />
           </ProtectedRoute>
         }
       />

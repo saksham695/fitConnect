@@ -1,0 +1,114 @@
+.create-program-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--padding-xl);
+}
+
+.form-section {
+  margin-bottom: var(--spacing-8);
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-6);
+}
+
+.section-title {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+  margin: 0 0 var(--spacing-6) 0;
+}
+
+.week-navigation {
+  display: flex;
+  gap: var(--gap-sm);
+}
+
+.week-copy-section {
+  margin-bottom: var(--spacing-6);
+  padding: var(--padding-md);
+  background: var(--color-gray-50);
+  border-radius: var(--radius-lg);
+}
+
+.days-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--gap-md);
+}
+
+.day-builder {
+  padding: var(--padding-md);
+}
+
+.day-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-4);
+}
+
+.day-name {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.day-type-select {
+  padding: var(--spacing-2) var(--spacing-3);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+}
+
+.exercise-count {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-3);
+}
+
+.btn-sm {
+  padding: var(--spacing-2) var(--spacing-4);
+  font-size: var(--font-size-sm);
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--gap-sm);
+  padding-top: var(--padding-lg);
+  border-top: 1px solid var(--border-primary);
+}
+
+.error-message {
+  padding: var(--padding-md);
+  background: var(--color-error-50);
+  border: 1px solid var(--color-error-200);
+  border-radius: var(--radius-md);
+  color: var(--color-error-700);
+  margin-bottom: var(--spacing-6);
+}
+
+@media (max-width: 768px) {
+  .create-program-page {
+    padding: var(--padding-md);
+  }
+
+  .days-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .week-navigation,
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .week-navigation button,
+  .form-actions button {
+    width: 100%;
+  }
+}

@@ -32,6 +32,7 @@ const Header: React.FC = () => {
             <>
               <Link to="/dashboard">Dashboard</Link>
               <Link to="/clients">My Clients</Link>
+              <Link to="/programs">Programs</Link>
               <Link to="/courses">My Courses</Link>
               <Link to="/availability">Availability</Link>
               <Link to="/my-bookings">Bookings</Link>
@@ -40,8 +41,10 @@ const Header: React.FC = () => {
             <>
               <Link to="/dashboard">Dashboard</Link>
               <Link to="/trainers">Find Trainers</Link>
+              <Link to="/programs">My Programs</Link>
               <Link to="/my-courses">My Courses</Link>
               <Link to="/goals">My Goals</Link>
+              <Link to="/progress">Progress</Link>
               <Link to="/my-bookings">My Bookings</Link>
             </>
           )}
